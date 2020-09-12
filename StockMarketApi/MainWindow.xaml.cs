@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APIHelperLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace StockMarketApi
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+
+        private async void WindowLoaded(object sender, RoutedEventArgs e)
+        {
+            TimeStampList.ItemsSource = StockHelper.GetStocks("MSFT").Take(1);
         }
     }
 }

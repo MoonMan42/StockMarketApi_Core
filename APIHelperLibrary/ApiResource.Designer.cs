@@ -59,5 +59,14 @@ namespace APIHelperLibrary {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 762FYPWFH98A93HE.
+        /// </summary>
+        internal static string Token {
+            get {
+                return ResourceManager.GetString("Token", resourceCulture);
+            }
+        }
     }
 }
