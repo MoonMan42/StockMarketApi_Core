@@ -7,24 +7,41 @@
         mc:Ignorable="d"
         Loaded="WindowLoaded"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <ListView x:Name="TimeStampList" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="TimeStamp"  DisplayMemberBinding="{Binding GetTimeStamp}"/>
-                </GridView> 
-            </ListView.View>
-        </ListView>
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                
+            </MenuItem>
+        </Menu>
+        
+        <Grid Margin="0 5 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <DockPanel Grid.Column="0" Grid.Row="0">
+                <Label Content="Search" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <TextBox x:Name="searchBox" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            </DockPanel>
+
+            <ListView x:Name="TimeStampList" Grid.Column="0" Grid.Row="1" Grid.RowSpan="3">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Stock Code" Width="Auto"  DisplayMemberBinding="{Binding Symbol}"/>
+                        <GridViewColumn Header="Company Name" Width="Auto"  DisplayMemberBinding="{Binding Name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </DockPanel>
 </Window>

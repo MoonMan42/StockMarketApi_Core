@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace APIHelperLibrary
+namespace APIModels
 {
     public class StockModel
     {
@@ -16,7 +16,7 @@ namespace APIHelperLibrary
         public double Volume { get; set; }
 
 
-        public String GetTimeStamp
+        public string GetTimeStamp
         {
             get
             {

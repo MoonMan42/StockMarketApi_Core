@@ -1,4 +1,4 @@
-﻿using APIHelperLibrary;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +29,7 @@ namespace StockMarketApi
 
         private async void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            TimeStampList.ItemsSource = StockHelper.GetStocks("MSFT").Take(1);
+            //TODO: download last saved.            
         }
     }
 }
