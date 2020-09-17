@@ -9,17 +9,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ApiResource.Designer.cs">
+    <Compile Update="APIResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ApiResource.resx</DependentUpon>
+      <DependentUpon>APIResource.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ApiResource.resx">
+    <EmbeddedResource Update="APIResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ApiResource.Designer.cs</LastGenOutput>
+      <LastGenOutput>APIResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
