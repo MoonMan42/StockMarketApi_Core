@@ -9,5 +9,12 @@ namespace StockMarketApi_Models
         //symbol,name,exchange,assetType,ipoDate,delistingDate,status
         public string Symbol { get; set; }
         public string Name { get; set; }
+
+
+        public StockListModel(string symb, string name)
+        {
+            Symbol = symb;
+            Name = name;
+        }
     }
 }
