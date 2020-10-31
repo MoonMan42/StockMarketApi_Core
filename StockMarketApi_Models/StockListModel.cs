@@ -6,5 +6,8 @@ namespace StockMarketApi_Models
 {
     public class StockListModel
     {
+        //symbol,name,exchange,assetType,ipoDate,delistingDate,status
+        public string Symbol { get; set; }
+        public string Name { get; set; }
     }
 }

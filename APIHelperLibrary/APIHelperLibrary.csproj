@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StockMarketApi_Models\StockMarketApi_Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="APIResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
