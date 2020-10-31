@@ -1,6 +1,4 @@
-﻿
-using APIHelperLibrary;
-using ServiceStack;
+﻿using StockMarketApi_WebApi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,35 +24,33 @@ namespace StockMarketApi
         public MainWindow()
         {
             InitializeComponent();
+
+            // display todays date
+            TodayDate.Content = DateTime.Now.ToString("dd MMM yy");
+
+            // Initialize the api client
+            ApiHelper.InitializeClient();
+
+
         }
 
-
+        // runs at startup
         private async void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            //TimeStampList.ItemsSource = StockHelper.GetStocks("MSFT").Take(1);
+            await LoadCompanyList();
         }
 
-        private async void Search_TextChange(object sender, KeyEventArgs e)
+        private async Task LoadCompanyList()
         {
+            var polyStocks = await PolygonStockProcessor.LoadCompanyList();
 
-            List<SymbolModel> results;
-            SearchComboBox.ItemsSource = null;
-
-            if (!SearchComboBox.Text.IsNullOrEmpty())
-            {
-                results = await APIHelper.SearchSymbol(SearchComboBox.Text);
-
-                SearchComboBox.ItemsSource = results;
-            }
-            else
-            {
-                SearchComboBox.Items.Clear();
-            }
         }
 
-        private void SearchComboBox_DropDownOpened(object sender, EventArgs e)
+        // search bar for company list
+        private void Search_TextChange(object sender, TextChangedEventArgs e)
         {
 
         }
+
     }
 }

@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\APIHelperLibrary\APIHelperLibrary.csproj" />
+    <ProjectReference Include="..\SticjMarketApi_WebApi\StockMarketApi_WebApi.csproj" />
+    <ProjectReference Include="..\StockMarketApi_Models\StockMarketApi_Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

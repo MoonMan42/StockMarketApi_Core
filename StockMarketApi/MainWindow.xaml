@@ -10,10 +10,11 @@
 
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
+            <MenuItem Header="_File">
                 
             </MenuItem>
         </Menu>
+        
         <Grid Margin="0 5 0 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -27,19 +28,11 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <DockPanel Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="2">
-                <Label Content="Search:"   DockPanel.Dock="Left"/>
-                <ComboBox x:Name="SearchComboBox" IsEditable="True" Margin="5" KeyUp="Search_TextChange"
-                          Focusable="True">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding GetResults}" />
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </DockPanel>
+            <Label Name="TodayDate" Content="test" HorizontalContentAlignment="Right" Grid.Column="3" Grid.Row="0" Margin="5"/>
 
             
+            <!-- column 1 -->
+            <TextBox x:Name="SearchTextBox" TextChanged="Search_TextChange" Grid.Column="0" Grid.Row="0" Margin="5" />
         </Grid>
     </DockPanel>
 </Window>
