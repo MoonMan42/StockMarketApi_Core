@@ -54,5 +54,41 @@ namespace StockMarketApi_Wpf
             // show list
             Symbol_ListView.ItemsSource = stockSymbols;
         }
+
+        #region Header Commands
+        private void ReloadSymbols_Click(object sender, RoutedEventArgs e)
+        {
+            // download the list and save to csv
+            stockSymbols = AlphaVantageHelper.GetStockList().Result;
+            csvHelper.SaveSymbolsCsv(stockSymbols);
+
+            // refresh the list and clear search
+            Symbol_ListView.ItemsSource = stockSymbols;
+            SearchBar.Text = string.Empty;
+
+            // show completion 
+            MessageBox.Show("Re-loaded new list");
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close(); // close the project
+        }
+        #endregion
+
+
+
+
+        #region Main View
+        private void SearchSymbol_OnText(object sender, TextChangedEventArgs e)
+        {
+            string search = SearchBar.Text;
+
+            // sort the list by searched symbol or company
+            Symbol_ListView.ItemsSource = stockSymbols.Where(s => s.Symbol.IndexOf($"{search.ToUpper()}", StringComparison.CurrentCultureIgnoreCase) != -1
+                || s.Name.IndexOf($"{search.ToUpper()}", StringComparison.CurrentCultureIgnoreCase) != -1)
+                    .ToList();
+        }
+        #endregion
     }
 }

@@ -8,7 +8,10 @@
         Title="Stock Market" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File"></MenuItem>
+            <MenuItem Header="_File">
+                <MenuItem Header="Reload Symbols" Click="ReloadSymbols_Click" />
+                <MenuItem Header="Exit" Click="Exit_Click" />
+            </MenuItem>
         </Menu>
 
         <Grid>
@@ -30,7 +33,8 @@
             
             <!-- Column 0 (Auto) -->
             <!--Searcch bar-->
-            <TextBox x:Name="SearchBar" Grid.Column="0" Grid.Row="0" Padding="5" Margin="5" />
+            <TextBox x:Name="SearchBar" Grid.Column="0" Grid.Row="0" Padding="5" Margin="5"
+                     TextChanged="SearchSymbol_OnText"/>
 
             <ListView x:Name="Symbol_ListView" Grid.Column="0" Grid.Row="1" 
                       Grid.RowSpan="5" Margin="5" >
